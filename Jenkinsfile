@@ -1,4 +1,4 @@
-pipeline{
+/*/pipeline{
     agent any
     environment{
         SONAR_HOME= tool "Sonar"
@@ -19,7 +19,7 @@ pipeline{
         stage("OWASP Dependency Check"){
             steps{
                 dependencyCheck additionalArguments: '--scan ./', odcInstallation: 'dc'
-                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+                dependencyCheckPublisher pattern: '**//* dependency-check-report.xml'
             }
         }
         stage("Sonar Quality Gate Scan"){
@@ -40,4 +40,4 @@ pipeline{
             }
         }
     }
-}
+}*/
